@@ -35,13 +35,16 @@ return [
     |
     */
 
-    'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
+   'guards' => [
+    'web' => [
+        'driver' => 'session',
+        'provider' => 'users',
     ],
-
+    'khachhang' => [
+        'driver' => 'session',
+        'provider' => 'khachhangs',
+    ],
+],
     /*
     |--------------------------------------------------------------------------
     | User Providers
@@ -60,16 +63,15 @@ return [
     */
 
     'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\User::class),
-        ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+    'users' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\User::class,
     ],
+    'khachhangs' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Khachhang::class,
+    ],
+],
 
     /*
     |--------------------------------------------------------------------------

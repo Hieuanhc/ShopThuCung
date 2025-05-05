@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;use App\Http\Controllers\{ HomeController };
+use Illuminate\Support\Facades\Route;use App\Http\Controllers\{ HomeController,  CartController , AuthController };
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,5 +23,21 @@ Route::get('/congiong', [HomeController:: class, 'congiong']);
 Route::get('/search', [HomeController:: class, 'search'])->name('search');
 Route::get('/viewAll', [HomeController:: class, 'viewAll'])->name('viewAll');
 Route::get('/services', [HomeController:: class, 'services'])->name('services');
+  // router cart
+  Route::get('cart', [CartController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add_to_cart');
+Route::get('add-go-to-cart/{id}', [CartController::class, 'addGoToCart'])->name('add_go_to_cart');
+Route::patch('update-cart', [CartController::class, 'update'])->name('update_cart');
+Route::delete('remove-from-cart', [CartController::class, 'remove'])->name('remove_from_cart');
+Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout');
+Route::post('/dathang', [CartController:: class, 'dathang'])->name('dathang');
+Route::post('/vnpay', [CartController:: class, 'vnpay'])->name('vnpay');
+Route::get('/thongbaodathang', [CartController:: class, 'thongbaodathang'])->name('thongbaodathang');
+// router login , register ,logout
+Route::get('/login', [AuthController:: class, 'index']);
+Route::post('/login', [AuthController:: class, 'loginPost'])->name('login');
+Route::get('/register', [AuthController:: class, 'register']);
+Route::post('/register', [AuthController:: class, 'registerPost'])->name('register');
+Route::delete('/logout', [AuthController:: class, 'logout'])->name('logout');
 
 
