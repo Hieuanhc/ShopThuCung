@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Sanpham;
 
 use App\Repositories\ISanphamRepository;
+use Illuminate\Support\Facades\Session;
+
+use Illuminate\Support\Facades\URL;
 
 class HomeController extends Controller
 {

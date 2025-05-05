@@ -115,10 +115,10 @@
 
             <div class="footer__info-content">
                 <h3>Liên hệ</h3>
-                <p>Địa chỉ: 561 Su Van Hanh StreetWard 13, District 10</p>
-                <p>Email: trieuetam@gmail.com</p>
-                <p>Sđt: 123456789</p>
-            </div>
+                <p>Địa chỉ: 53 Võ Văn Ngân , Thủ Đức , Hồ Chí Minh</p>
+                <p>Email: hieuchung428@gmail.com</p>
+                <p>Sđt: 0372334658</p>
+            </div>  
 
             <div class="footer__info-content">
                 <h3>Fanpage</h3>
