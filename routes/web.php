@@ -24,15 +24,22 @@ Route::get('/search', [HomeController:: class, 'search'])->name('search');
 Route::get('/viewAll', [HomeController:: class, 'viewAll'])->name('viewAll');
 Route::get('/services', [HomeController:: class, 'services'])->name('services');
   // router cart
+  // Các route giỏ hàng & thanh toán cần đăng nhập
+Route::middleware('auth:khachhang')->group(function () {
   Route::get('cart', [CartController::class, 'cart'])->name('cart');
-Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add_to_cart');
-Route::get('add-go-to-cart/{id}', [CartController::class, 'addGoToCart'])->name('add_go_to_cart');
-Route::patch('update-cart', [CartController::class, 'update'])->name('update_cart');
-Route::delete('remove-from-cart', [CartController::class, 'remove'])->name('remove_from_cart');
-Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout');
-Route::post('/dathang', [CartController:: class, 'dathang'])->name('dathang');
-Route::post('/vnpay', [CartController:: class, 'vnpay'])->name('vnpay');
-Route::get('/thongbaodathang', [CartController:: class, 'thongbaodathang'])->name('thongbaodathang');
+  Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add_to_cart');
+  Route::get('add-go-to-cart/{id}', [CartController::class, 'addGoToCart'])->name('add_go_to_cart');
+  Route::patch('update-cart', [CartController::class, 'update'])->name('update_cart');
+  Route::delete('remove-from-cart', [CartController::class, 'remove'])->name('remove_from_cart');
+  Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout');
+  Route::post('/dathang', [CartController::class, 'dathang'])->name('dathang');
+  Route::post('/vnpay', [CartController::class, 'vnpay'])->name('vnpay');
+  Route::get('/thongbaodathang', [CartController::class, 'thongbaodathang'])->name('thongbaodathang');
+});
+Route::get('/login-khachhang', [\App\Http\Controllers\Auth\LoginKhachHangController::class, 'showLoginForm'])->name('login.khachhang');
+Route::post('/login-khachhang', [\App\Http\Controllers\Auth\LoginKhachHangController::class, 'login']);
+Route::post('/logout-khachhang', [\App\Http\Controllers\Auth\LoginKhachHangController::class, 'logout'])->name('logout.khachhang');
+
 // router login , register ,logout
 Route::get('/login', [AuthController:: class, 'index']);
 Route::post('/login', [AuthController:: class, 'loginPost'])->name('login');
