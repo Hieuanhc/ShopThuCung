@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;use App\Http\Controllers\{ HomeController,  CartController , AuthController };
+use App\Http\Controllers\admin\{AdminController};
 
 Route::get('/', function () {
     return view('welcome');
@@ -46,5 +47,7 @@ Route::post('/login', [AuthController:: class, 'loginPost'])->name('login');
 Route::get('/register', [AuthController:: class, 'register']);
 Route::post('/register', [AuthController:: class, 'registerPost'])->name('register');
 Route::delete('/logout', [AuthController:: class, 'logout'])->name('logout');
+//admin
+Route::get('/dashboard', [AdminController:: class, 'dashboard']);
 
 
