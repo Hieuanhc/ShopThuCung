@@ -66,7 +66,9 @@ Route::prefix('/')->group(function () {
 
 
 Route::prefix('/')->middleware(\App\Http\Middleware\AdminLoginMiddleware::class)->group(function () {
-  Route::get('/dashboard', [AdminController::class, 'dashboard']);
+  Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+  //Route::get('/dashboard', [AdminController::class, 'dashboard']);
   Route::get('/admin_logout', [AdminController::class, 'admin_logout']);
 
   Route::get('/admin/product', [ProductController::class, 'index'])->name('product.index');

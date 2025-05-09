@@ -44,6 +44,9 @@ class AuthController extends Controller
         return back()->with('error', 'Sai tên tài khoản hoặc mật khẩu');
     }
 
+
+
+
     public function logout(){
         Auth::logout();
         return redirect('/');
