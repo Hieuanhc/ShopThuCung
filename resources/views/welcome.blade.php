@@ -95,7 +95,7 @@
                 <h3>Liên hệ</h3>
                 <p>Địa chỉ: 53 Vo Van Ngan </p>
                 <p>Email: hieuchung428@gmail.com</p>
-                <p>Sđt: 123456789</p>
+                <p>Sđt: 0372334658</p>
             </div>
 
             <div class="footer__info-content">
@@ -109,7 +109,7 @@
         </div>
 
         <div class="footer__copyright">
-            <center> 2022 All rights reserved.</center>
+            <center>Do An Lap Trinh BackEnd-Web2  </center>
         </div>
     </footer>
 
